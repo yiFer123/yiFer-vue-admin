@@ -9,7 +9,7 @@
       <div class="nreadcrumb">
         <header-crumb />
       </div>
-      <header-info />
+      <header-info id="guide_info" />
     </div>
   </div>
 </template>

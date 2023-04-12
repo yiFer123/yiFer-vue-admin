@@ -10,7 +10,7 @@
 
 ```text
 # 克隆地址
-
+https://github.com/yiFer123/yiFer-vue-admin.git
 ```
 
 - **Install：**
@@ -44,7 +44,7 @@ pnpm build:pro
 
 - **Lint：**
 
-```text
+````text
 # eslint 检测代码
 pnpm lint
 
@@ -52,5 +52,5 @@ pnpm lint
 
 ```text
 # 提交代码（提交前会自动执行 lint:lint-staged 命令）
-npm run commit
-```
+pnpm commit
+````
