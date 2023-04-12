@@ -1,0 +1,88 @@
+{
+  "code": 0,
+  "data": {
+    "list": [
+      {
+        "id": 3825,
+        "name": "发发发",
+        "parentId": 3804,
+        "createAt": "2023-03-31T17:09:51.000Z",
+        "updateAt": "2023-03-31T17:16:35.000Z",
+        "leader": "是对方"
+      },
+      {
+        "id": 3822,
+        "name": "协同部",
+        "parentId": 5,
+        "createAt": "2023-03-31T10:14:18.000Z",
+        "updateAt": "2023-03-31T10:50:28.000Z",
+        "leader": "戴安娜"
+      },
+      {
+        "id": 3815,
+        "name": "测试部",
+        "parentId": 2,
+        "createAt": "2023-03-31T06:07:56.000Z",
+        "updateAt": "2023-03-31T10:13:26.000Z",
+        "leader": "李雷"
+      },
+      {
+        "id": 3811,
+        "name": "销售部",
+        "parentId": 5,
+        "createAt": "2023-03-30T18:13:30.000Z",
+        "updateAt": "2023-03-30T18:13:41.000Z",
+        "leader": "阿彬"
+      },
+      {
+        "id": 3808,
+        "name": "管理部",
+        "parentId": 5,
+        "createAt": "2023-03-30T18:10:09.000Z",
+        "updateAt": "2023-03-30T18:16:08.000Z",
+        "leader": "阿伟"
+      },
+      {
+        "id": 3804,
+        "name": "保安部",
+        "parentId": 2,
+        "createAt": "2023-03-30T18:02:02.000Z",
+        "updateAt": "2023-03-30T18:02:02.000Z",
+        "leader": "杰哥"
+      },
+      {
+        "id": 3682,
+        "name": "财务部99",
+        "parentId": 1,
+        "createAt": "2023-03-21T13:24:21.000Z",
+        "updateAt": "2023-03-29T15:33:56.000Z",
+        "leader": "coder6"
+      },
+      {
+        "id": 5,
+        "name": "人事部",
+        "parentId": 1,
+        "createAt": "2021-01-02T10:04:02.000Z",
+        "updateAt": "2021-05-02T07:33:08.000Z",
+        "leader": "lily"
+      },
+      {
+        "id": 4,
+        "name": "客服部",
+        "parentId": 2,
+        "createAt": "2021-01-02T10:04:02.000Z",
+        "updateAt": "2021-08-03T11:14:32.000Z",
+        "leader": "lily"
+      },
+      {
+        "id": 3,
+        "name": "运营部",
+        "parentId": 1,
+        "createAt": "2021-01-02T10:03:42.000Z",
+        "updateAt": "2021-01-05T08:25:52.000Z",
+        "leader": "lucy"
+      }
+    ],
+    "totalCount": 12
+  }
+}

@@ -1,0 +1,73 @@
+/* 自定义 element 暗黑模式样式 */
+html.dark {
+  --yifer-bg-color: #171717;
+  --yifer-border-light: 1px solid #4c4c4d;
+  --yifer-content-bg-color: #070707;
+
+  /*
+  * 自定义暗黑模式下显示效果
+  */
+  .el-container {
+    background-color: var(--yifer-bg-color) !important;
+
+    // aside相关配置
+    .el-aside {
+      background-color: var(--yifer-bg-color) !important;
+      border-right: var(--yifer-border-light) !important;
+      .logo {
+        border-bottom: var(--yifer-border-light) !important;
+      }
+    }
+    .not-aside {
+      border-right: none !important;
+    }
+
+    // header相关配置
+    .el-header {
+      background-color: var(--yifer-bg-color) !important;
+      border-bottom-color: var(--el-border-color-light) !important;
+
+      // header 右侧图标hover背景色
+      .operation {
+        span {
+          &:hover {
+            background: #393e44;
+          }
+        }
+      }
+    }
+
+    // main相关配置
+    .el-main {
+      background-color: var(--yifer-content-bg-color) !important;
+    }
+
+    .el-footer {
+      .footer {
+        background-color: var(--yifer-bg-color) !important;
+        border-top: var(--yifer-border-light) !important;
+        a {
+          color: var(--el-text-color-regular) !important;
+        }
+      }
+    }
+  }
+
+  // 菜单栏的背景色和字体颜色配置
+  .el-menu,
+  .el-sub-menu,
+  .el-menu-item,
+  .el-sub-menu__title {
+    background-color: var(--yifer-bg-color) !important;
+    &:not(.is-active) {
+      color: #bdbdc0 !important;
+    }
+    &.is-active {
+      color: #ffffff !important;
+      background-color: #000000 !important;
+    }
+  }
+  .el-menu-item:not(.is-active):hover {
+    background-color: var(--yifer-content-bg-color) !important;
+  }
+}

@@ -1,0 +1,7 @@
+// import dark theme
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
+@use 'element-plus/theme-chalk/display.css' as *; // 栅格布局隐藏元素
+@import './common.scss';
+@import './reset.scss';
+@import './var.scss';
+@import './element/element-dark.scss';

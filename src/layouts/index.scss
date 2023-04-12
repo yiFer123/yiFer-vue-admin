@@ -1,0 +1,48 @@
+.main-content {
+  height: 100%;
+
+  .el-header {
+    box-sizing: border-box;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .el-aside {
+    box-sizing: border-box;
+    border-right: 1px solid #f1f1f1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    line-height: 200px;
+    text-align: left;
+    cursor: pointer;
+    background-color: #001529;
+    transition: all 0.3s ease;
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .el-main {
+    // overflow: hidden;
+    background-color: #f0f2f5;
+  }
+
+  .el-footer {
+    box-sizing: border-box;
+    height: auto;
+    padding: 0;
+    // border-top: 1px solid #f1f1f1;
+  }
+}
+
+// 路由页面切换动画
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-enter-from {
+  transform: translateX(20px);
+  opacity: 0;
+}

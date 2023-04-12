@@ -1,0 +1,128 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "id": 1,
+      "name": "首页",
+      "type": 1,
+      "url": "/home",
+      "icon": "el-icon-house",
+      "children": [],
+      "keep": false
+    },
+    {
+      "id": 2,
+      "name": "大屏展示",
+      "type": 1,
+      "url": "/dataScreen",
+      "icon": "el-icon-fullScreen",
+      "children": [],
+      "keep": false
+    },
+    {
+      "id": 3,
+      "name": "系统总览",
+      "type": 1,
+      "url": "/analysis",
+      "icon": "el-icon-monitor",
+      "children": [
+        {
+          "id": 31,
+          "url": "/analysis/overview",
+          "name": "系统概述",
+          "type": 2,
+          "children": null,
+          "keep": false,
+          "parentId": 3
+        },
+        {
+          "id": 32,
+          "url": "/analysis/dashboard",
+          "name": "Dashboard",
+          "type": 2,
+          "children": null,
+          "keep": false,
+          "parentId": 3
+        }
+      ],
+      "keep": false
+    },
+    {
+      "id": 4,
+      "name": "系统管理",
+      "type": 1,
+      "url": "/system",
+      "icon": "el-icon-setting",
+      "children": [
+        {
+          "id": 41,
+          "url": "/system/user",
+          "name": "用户管理",
+          "type": 2,
+          "children": [
+            {
+              "id": 411,
+              "url": null,
+              "name": "创建用户",
+              "type": 3,
+              "parentId": 41,
+              "permission": "system:users:create"
+            },
+            {
+              "id": 412,
+              "url": null,
+              "name": "删除用户",
+              "type": 3,
+              "parentId": 41,
+              "permission": "system:users:delete"
+            },
+            {
+              "id": 413,
+              "url": null,
+              "name": "修改用户",
+              "type": 3,
+              "parentId": 41,
+              "permission": "system:users:update"
+            },
+            {
+              "id": 414,
+              "url": null,
+              "name": "查询用户",
+              "type": 3,
+              "parentId": 41,
+              "permission": "system:users:query"
+            }
+          ],
+          "keep": false,
+          "parentId": 4
+        }
+      ],
+      "keep": false
+    },
+    {
+      "id": 5,
+      "name": "组件中心",
+      "type": 1,
+      "url": "/assembly",
+      "icon": "el-icon-operation",
+      "children": [
+        {
+          "id": 51,
+          "url": "/assembly/wangEditor",
+          "name": "富文本编辑器",
+          "type": 2,
+          "children": [],
+          "parentId": 5
+        },
+        {
+          "id": 52,
+          "url": "/assembly/guide",
+          "name": "引导页",
+          "type": 2,
+          "children": [],
+          "parentId": 5
+        }
+      ]
+    }
+  ]
+}

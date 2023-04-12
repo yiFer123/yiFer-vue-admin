@@ -1,0 +1,110 @@
+$defaultInputBack: #f5f5f4; // 默认空值状态
+$focusInputBack: #efefee; // 获得焦点状态
+$avtiveInputBack: #fefefd; // 输入状态
+$activeBorder: #5171a0; // 聚焦时边框颜色
+$commonLarge: 48px;
+
+.login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbfbfb;
+  font-family: Helvetica;
+  overflow: hidden;
+  background-image: url('@/assets/images/login-bg.svg');
+}
+
+.login-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  padding: 60px 50px;
+  background-color: #fff;
+  transition: all 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+  &:hover {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: DIN;
+    margin: 30px 0;
+  }
+
+  .el-form {
+    text-align: center;
+  }
+
+  .el-input {
+    width: 300px;
+    // margin-bottom: 20px;
+    font-size: 16px;
+
+    &.el-input--large {
+      height: $commonLarge;
+    }
+  }
+
+  ::v-deep(.el-input__wrapper) {
+    background-color: $defaultInputBack;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: $focusInputBack;
+    }
+
+    &.is-focus {
+      box-shadow: 0 0 0 1px $activeBorder inset !important;
+    }
+  }
+
+  .el-button {
+    width: 300px;
+    margin: 10px 0 25px 0;
+    font-size: 16px;
+    background-color: #4b7ddb;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: #286bda;
+    }
+
+    &.el-button--large {
+      height: $commonLarge;
+    }
+  }
+
+  .controls {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+
+    .forgot {
+      color: #b7b7b7;
+
+      &:hover {
+        cursor: pointer;
+        color: #286bda;
+        transition: all 0.5s;
+      }
+    }
+  }
+}
