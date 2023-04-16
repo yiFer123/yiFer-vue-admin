@@ -1,12 +1,6 @@
 <template>
   <div class="wangEditor">
-    <el-alert
-      title="富文本编辑器💌"
-      type="info"
-      description="为用户提供可以实现所见即所得的文本编辑器的功能"
-      show-icon
-      :closable="false"
-    />
+    <my-tips :title="'富文本编辑器'" :description="'为用户提供可以实现所见即所得的文本编辑器的功能'" />
 
     <wang-editor v-model:value="editorValue"></wang-editor>
 
@@ -20,6 +14,7 @@
 
 <script setup lang="ts" name="wangEditor">
 import WangEditor from '@/components/wangEditor'
+import MyTips from '@/components/myTips'
 import { ref } from 'vue'
 
 const editorValue = ref('')

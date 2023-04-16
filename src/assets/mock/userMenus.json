@@ -121,6 +121,22 @@
           "type": 2,
           "children": [],
           "parentId": 5
+        },
+        {
+          "id": 53,
+          "url": "/assembly/copy",
+          "name": "剪切板",
+          "type": 2,
+          "children": [],
+          "parentId": 5
+        },
+        {
+          "id": 54,
+          "url": "/assembly/fullPage",
+          "name": "全屏滚动",
+          "type": 2,
+          "children": [],
+          "parentId": 5
         }
       ]
     }
