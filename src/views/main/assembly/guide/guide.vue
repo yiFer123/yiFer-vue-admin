@@ -1,12 +1,6 @@
 <template>
   <div class="guide">
-    <el-alert
-      title="用户引导页"
-      type="info"
-      description="基于driver.js实现的一个可为用户提供使用步骤参考，提高用户使用体验的demo！"
-      show-icon
-      :closable="false"
-    />
+    <my-tips :title="'用户引导页'" :description="'使用vue-clipboard3插件实现的页面复制功能'" />
 
     <div class="guide_content">
       <div id="box1" class="box1">盒子1</div>
@@ -23,6 +17,7 @@
 <script setup lang="ts" name="guide">
 import Driver from 'driver.js'
 import 'driver.js/dist/driver.min.css'
+import MyTips from '@/components/myTips'
 
 const guide = () => {
   const driver: Driver = new Driver({
