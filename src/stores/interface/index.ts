@@ -11,4 +11,34 @@ export interface ThemeState {
   assemblySize: AssemblySizeType
 }
 
+/* RoleState */
+export interface RoleState {
+  entireRoles: IRole[]
+  entireDepartments: IDepartment[]
+}
+
+interface IRole {
+  id: number
+  name: string
+  intro: string
+  createAt: string
+  updateAt: string
+  menuList: any[]
+}
+
+interface IDepartment {
+  id: number
+  name: string
+  parentId: number
+  createAt: string
+  updateAt: string
+  leader: string
+}
+
 export type AssemblySizeType = 'default' | 'small' | 'large'
+
+/* SystemState */
+export interface ISystemState {
+  pageList: any[]
+  pageTotalCount: number
+}

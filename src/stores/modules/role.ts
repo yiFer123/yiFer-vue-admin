@@ -1,9 +1,10 @@
 import { getEntireDepartments, getEntireRoles } from '@/service/modules/main/system'
 import { defineStore } from 'pinia'
 import { ElMessage } from 'element-plus'
+import type { RoleState } from '../interface'
 
 const useRoleStore = defineStore('role', {
-  state: () => ({
+  state: (): RoleState => ({
     entireRoles: [],
     entireDepartments: []
   }),

@@ -19,3 +19,31 @@ export function getEntireDepartments() {
     url: '/department/list'
   })
 }
+
+// 针对页面的增删改查
+export function postPageListData(pageName: string, queryInfo: any) {
+  return http.post({
+    url: `/${pageName}/list`,
+    data: queryInfo
+  })
+}
+
+export function deletePageById(pageName: string, id: number) {
+  return http.delete({
+    url: `/${pageName}/${id}`
+  })
+}
+
+export function newPageData(pageName: string, pageInfo: any) {
+  return http.post({
+    url: `/${pageName}`,
+    data: pageInfo
+  })
+}
+
+export function editPageData(pageName: string, id: number, pageInfo: any) {
+  return http.patch({
+    url: `/${pageName}/${id}`,
+    data: pageInfo
+  })
+}
