@@ -6,7 +6,7 @@ const useThemeStore = defineStore('theme', {
     // 全局语言环境
     language: '',
     // element组件大小(默认large)
-    assemblySize: 'large'
+    assemblySize: 'default'
   }),
   getters: {},
   actions: {

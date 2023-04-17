@@ -1,0 +1,56 @@
+.content {
+  $titleHeight: 50px;
+
+  flex: 1;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 20px;
+  overflow: hidden;
+
+  .header,
+  .pagination {
+    height: $titleHeight;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .table {
+    height: calc(100% - 100px);
+
+    .el-table {
+      height: 100%;
+
+      :deep(.el-table__header th) {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--el-text-color-primary);
+        padding: 12.5px 0;
+        background-color: #f5f7fa;
+      }
+
+      :deep(.cell) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      :deep(.el-table-column--selection > .cell) {
+        display: block;
+      }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+  }
+}
