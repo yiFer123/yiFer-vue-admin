@@ -28,7 +28,7 @@
     </div>
 
     <div class="table">
-      <el-table :data="pageList" border style="width: 100%" highlight-current-row>
+      <el-table v-bind="contentConfig.childrenTree" :data="pageList" border style="width: 100%" highlight-current-row>
         <template v-for="item in contentConfig.propsList" :key="item.prop">
           <template v-if="item.type === 'timer'">
             <el-table-column align="center" v-bind="item" show-overflow-tooltip>
@@ -102,6 +102,7 @@ interface IProps {
       btnTitle: string
     }
     propsList: any[]
+    childrenTree?: any
   }
 }
 

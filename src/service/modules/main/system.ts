@@ -3,6 +3,7 @@ import http from '@/service'
 /** mock data by coderwhy */
 import roleList from '@/assets/mock/roleList.json'
 import departmentList from '@/assets/mock/departmentList.json'
+import userMenus from '@/assets/mock/userMenus.json'
 
 export function getEntireRoles() {
   return roleList
@@ -17,6 +18,14 @@ export function getEntireDepartments() {
 
   return http.post({
     url: '/department/list'
+  })
+}
+
+export function getEntireMenus() {
+  return userMenus
+
+  return http.post({
+    url: '/menu/list'
   })
 }
 

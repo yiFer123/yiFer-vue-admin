@@ -49,7 +49,6 @@ export const useLoginStore = defineStore('login', {
 
       // 7- 动态路由映射
       const routes = mapMenusToRoutes(userMenus)
-      // console.log(routes)
       routes.forEach((route) => router.addRoute('main', route))
 
       // 8- 进行页面跳转

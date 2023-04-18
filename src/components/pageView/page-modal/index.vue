@@ -14,20 +14,20 @@
               :prop="item.prop"
               v-if="item.type !== 'password' || (item.type === 'password' && isNewRef)"
             >
-              <template v-if="item.type === 'input'">
+              <template v-if="item.type === 'input' && item.prop">
                 <el-input :placeholder="item.placeholder" v-model="formData[item.prop]"></el-input>
               </template>
-              <template v-if="item.type === 'password'">
+              <template v-if="item.type === 'password' && item.prop">
                 <el-input :placeholder="item.placeholder" v-model="formData[item.prop]"></el-input>
               </template>
-              <template v-if="item.type === 'select'">
+              <template v-if="item.type === 'select' && item.prop">
                 <el-select v-model="formData[item.prop]" :placeholder="item.placeholder">
                   <template v-for="option in item.options" :key="option.value">
                     <el-option :label="option.label" :value="option.value"></el-option>
                   </template>
                 </el-select>
               </template>
-              <template v-if="item.type === 'date-picker'">
+              <template v-if="item.type === 'date-picker' && item.prop">
                 <el-date-picker
                   v-model="formData[item.prop]"
                   type="daterange"
@@ -35,6 +35,9 @@
                   start-placeholder="开始时间"
                   end-placeholder="结束时间"
                 />
+              </template>
+              <template v-if="item.type === 'custom'">
+                <slot :name="item.slotName"></slot>
               </template>
             </el-form-item>
           </template>
@@ -65,11 +68,13 @@ interface IProps {
     }
     formItems: IItems[]
   }
+  otherInfos?: any
 }
 interface IItems {
   type: string
-  prop: string
-  label: string
+  prop?: string
+  label?: string
+  slotName?: string
   placeholder?: string
   initialValue?: any
   options?: any[]
@@ -107,7 +112,9 @@ function setModalVisible(isNew: boolean = true, itemData?: any) {
 // form表单
 const initialData: any = {}
 for (const item of props.modalConfig.formItems) {
-  initialData[item.prop] = item.initialValue ?? ''
+  if (item.prop) {
+    initialData[item.prop] = item.initialValue ?? ''
+  }
 }
 const formData = reactive<any>(initialData)
 
@@ -115,11 +122,16 @@ const formData = reactive<any>(initialData)
 function handleConfirmClick() {
   centerDialogVisible.value = false
 
+  let infoData = { ...formData }
+  if (props.otherInfos) {
+    infoData = { ...infoData, ...props.otherInfos }
+  }
+
   if (!isNewRef.value && editData.value) {
-    systemStore.editPageDataAction(props.modalConfig.pageName, editData.value.id, formData)
+    systemStore.editPageDataAction(props.modalConfig.pageName, editData.value.id, infoData)
   } else {
     // 将formData发送到后台
-    systemStore.newPageDataAction(props.modalConfig.pageName, formData)
+    systemStore.newPageDataAction(props.modalConfig.pageName, infoData)
   }
 }
 
