@@ -1,10 +1,13 @@
 <template>
   <div class="menu">
-    <h2>menu</h2>
+    <page-content :content-config="contentConfig"></page-content>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import PageContent from '@/components/pageView/page-content'
+import contentConfig from './config/content.config'
+</script>
 
 <style lang="scss" scoped>
 .menu {

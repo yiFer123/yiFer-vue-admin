@@ -45,7 +45,7 @@ class RequestHttp {
         tryHideFullScreenLoading()
         // * 登录失效，错误码401判断
         if (res.status == ResultEnum.OVERDUE) {
-          ElMessage.error(data.msg) // 错误信息轻提示
+          ElMessage.error(data) // 错误信息轻提示
           loginStore.setToken('') // 重置token
           router.replace('/login') // 跳转到login登录
           return Promise.reject(data)
@@ -53,7 +53,7 @@ class RequestHttp {
 
         // * 全局错误信息拦截（防止下载文件得时候返回数据流，没有code，直接报错）
         if (res.status && res.status !== ResultEnum.SUCCESS) {
-          ElMessage.error(data.msg)
+          ElMessage.error(data)
           return Promise.reject(data)
         }
         // * 成功请求（在页面上除非特殊情况，否则不用在页面处理失败逻辑）

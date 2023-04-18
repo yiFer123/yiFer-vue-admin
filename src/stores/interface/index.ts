@@ -15,6 +15,7 @@ export interface ThemeState {
 export interface RoleState {
   entireRoles: IRole[]
   entireDepartments: IDepartment[]
+  entireMenus: any[]
 }
 
 interface IRole {

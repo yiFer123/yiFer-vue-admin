@@ -1,11 +1,20 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["auto-imports.d.ts", "components.d.ts", "env.d.ts", "src/**/*", "src/**/*.vue"],
-  "exclude": ["commitlint.config.js"],
+  "include": [
+    "auto-imports.d.ts",
+    "components.d.ts",
+    "env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "vite.config.ts"
+  ],
+  "exclude": ["commitlint.config.js", "node_modules", "dist", "**/*.js"],
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@": ["src"],
+      "@/*": ["src/*"]
     }
   },
 

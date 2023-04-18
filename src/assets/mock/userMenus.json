@@ -95,6 +95,174 @@
           ],
           "keep": false,
           "parentId": 4
+        },
+        {
+          "id": 42,
+          "url": "/system/department",
+          "name": "部门管理",
+          "sort": 101,
+          "type": 2,
+          "children": [
+            {
+              "id": 421,
+              "url": null,
+              "name": "创建部门",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 42,
+              "updateAt": "2021-04-19 21:59:39.000000",
+              "permission": "system:department:create"
+            },
+            {
+              "id": 422,
+              "url": null,
+              "name": "删除部门",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 42,
+              "updateAt": "2021-04-19 22:05:07.000000",
+              "permission": "system:department:delete"
+            },
+            {
+              "id": 423,
+              "url": null,
+              "name": "修改部门",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 42,
+              "updateAt": "2021-04-19 22:05:11.000000",
+              "permission": "system:department:update"
+            },
+            {
+              "id": 424,
+              "url": null,
+              "name": "查询部门",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 42,
+              "updateAt": "2021-04-19 22:05:14.000000",
+              "permission": "system:department:query"
+            }
+          ],
+          "createAt": "2021-01-02 18:09:11.000000",
+          "parentId": 4,
+          "updateAt": "2021-08-19 15:52:04.000000"
+        },
+        {
+          "id": 43,
+          "url": "/system/menu",
+          "name": "菜单管理",
+          "sort": 103,
+          "type": 2,
+          "children": [
+            {
+              "id": 431,
+              "url": null,
+              "name": "创建菜单",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 43,
+              "updateAt": "2021-04-19 21:59:39.000000",
+              "permission": "system:menu:create"
+            },
+            {
+              "id": 432,
+              "url": null,
+              "name": "删除菜单",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 43,
+              "updateAt": "2021-04-19 22:05:18.000000",
+              "permission": "system:menu:delete"
+            },
+            {
+              "id": 433,
+              "url": null,
+              "name": "修改菜单",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 43,
+              "updateAt": "2021-04-19 22:05:21.000000",
+              "permission": "system:menu:update"
+            },
+            {
+              "id": 434,
+              "url": null,
+              "name": "查询菜单",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 43,
+              "updateAt": "2021-04-19 22:05:24.000000",
+              "permission": "system:menu:query"
+            }
+          ],
+          "createAt": "2021-01-02 18:09:22.000000",
+          "parentId": 4,
+          "updateAt": "2021-08-19 15:52:07.000000"
+        },
+        {
+          "id": 44,
+          "url": "/system/role",
+          "name": "角色管理",
+          "sort": 102,
+          "type": 2,
+          "children": [
+            {
+              "id": 441,
+              "url": null,
+              "name": "创建角色",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 44,
+              "updateAt": "2021-04-19 21:59:39.000000",
+              "permission": "system:role:create"
+            },
+            {
+              "id": 442,
+              "url": null,
+              "name": "删除角色",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 44,
+              "updateAt": "2021-04-19 21:59:44.000000",
+              "permission": "system:role:delete"
+            },
+            {
+              "id": 443,
+              "url": null,
+              "name": "修改角色",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 44,
+              "updateAt": "2021-04-19 21:59:47.000000",
+              "permission": "system:role:update"
+            },
+            {
+              "id": 444,
+              "url": null,
+              "name": "查询角色",
+              "sort": null,
+              "type": 3,
+              "createAt": "2021-01-03 13:41:01.000000",
+              "parentId": 44,
+              "updateAt": "2021-04-19 21:59:49.000000",
+              "permission": "system:role:query"
+            }
+          ],
+          "createAt": "2021-01-02 18:09:22.000000",
+          "parentId": 4,
+          "updateAt": "2021-08-19 15:52:17.000000"
         }
       ],
       "keep": false
