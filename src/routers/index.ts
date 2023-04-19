@@ -15,7 +15,8 @@ const router = createRouter({
  */
 router.beforeEach((to) => {
   const token = localCache.getCache(LOGIN_TOKEN)
-  if (to.path.startsWith('/main') && !token) {
+  // if (to.path.startsWith('/main') && !token) {  以父路由为开头就可以用这种
+  if (to.path !== '/login' && !token) {
     return '/login'
   }
   // 拿到通过菜单映射的动态路由的第一个url并跳转，免除了重定向

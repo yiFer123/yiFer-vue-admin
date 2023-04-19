@@ -4,7 +4,7 @@ import type { LoginState } from '../interface'
 import { accountLoginRequest, getUserInfoById, getUserMenusByRoleId } from '@/service/modules/login/login'
 import { localCache } from '@/utils/cache'
 import { LOGIN_TOKEN, USER_INFO, USER_MENUS } from '@/global/constant'
-import mapMenusToRoutes from '@/utils/map-menus'
+import { mapMenusToRoutes, mapMenuToPermissions } from '@/utils/map-menus'
 import useRoleStore from './role'
 import { ElNotification } from 'element-plus'
 import { getTimeState } from '@/utils/common'
@@ -13,7 +13,8 @@ export const useLoginStore = defineStore('login', {
   state: (): LoginState => ({
     token: '',
     userInfo: {},
-    userMenus: []
+    userMenus: [],
+    permissions: []
   }),
   getters: {},
   actions: {
@@ -47,6 +48,10 @@ export const useLoginStore = defineStore('login', {
       localCache.setCache(USER_INFO, userInfo)
       localCache.setCache(USER_MENUS, userMenus)
 
+      // 6.1 - 获取登录用户所有的按钮权限
+      const permissions = mapMenuToPermissions(userMenus)
+      this.permissions = permissions
+
       // 7- 动态路由映射
       const routes = mapMenusToRoutes(userMenus)
       routes.forEach((route) => router.addRoute('main', route))
@@ -72,8 +77,13 @@ export const useLoginStore = defineStore('login', {
         this.userInfo = userInfo
         this.userMenus = userMenus
 
+        // 获取所有权限和部门数据
         const roleStore = useRoleStore()
         roleStore.fetchEntireDataAction()
+
+        // 获取按钮权限
+        const permissions = mapMenuToPermissions(userMenus)
+        this.permissions = permissions
 
         // 动态路由操作
         const routes = mapMenusToRoutes(userMenus)

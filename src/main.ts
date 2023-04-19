@@ -13,6 +13,10 @@ import store from './stores'
 import registerIcons from './global/register-icons'
 // vue i18n
 import I18n from '@/i18n/index'
+// custom directives
+import directives from './directives'
+// 解决谷歌 Added non-passive event listener to a scroll-blocking 'mousewheel' event
+import 'default-passive-events'
 
 const app = createApp(App)
-app.use(registerIcons).use(store).use(router).use(I18n).mount('#app')
+app.use(registerIcons).use(store).use(directives).use(router).use(I18n).mount('#app')

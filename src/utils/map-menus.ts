@@ -30,7 +30,7 @@ export let firstMenu: any = null
 /**
  * 将菜单栏映射成对应路由
  */
-export default function mapMenusToRoutes(userMenus: any[]) {
+export function mapMenusToRoutes(userMenus: any[]) {
   // 加载本地路由
   const localRoutes = loadLocalRoutes()
 
@@ -115,6 +115,28 @@ export function mapMenuListToIds(menuList: any[]) {
   }
 
   recurseGetId(menuList)
-
   return ids
+}
+
+/**
+ * 从菜单映射到按钮的权限
+ * @param menuList 菜单列表
+ * @returns 权限数组
+ */
+export function mapMenuToPermissions(menuList: any[]) {
+  const permissions: string[] = []
+
+  function recurseGetPermission(menus: any[]) {
+    for (const item of menus) {
+      if (item.type === 3) {
+        permissions.push(item.permission)
+      } else {
+        recurseGetPermission(item.children ?? [])
+      }
+    }
+  }
+
+  recurseGetPermission(menuList)
+
+  return permissions
 }

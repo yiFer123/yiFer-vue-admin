@@ -5,7 +5,7 @@ import userInfo from '@/assets/mock/userInfo.json'
 import userMenus from '@/assets/mock/userMenus.json'
 
 export function accountLoginRequest(account: any) {
-  return loginInfo
+  // return loginInfo
 
   return http.post({
     // 网络请求方式
@@ -15,7 +15,7 @@ export function accountLoginRequest(account: any) {
 }
 
 export function getUserInfoById(id: number) {
-  return userInfo
+  // return userInfo
 
   return http.get({
     url: `/users/${id}`

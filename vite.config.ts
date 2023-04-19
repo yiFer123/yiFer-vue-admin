@@ -68,7 +68,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           ext: '.gz'
         }),
       legacy({
-        targets: ['chrome 80'] // 需要兼容的目标列表，可以设置多个
+        // targets: ['chrome 80'] // 需要兼容的目标列表，可以设置多个
         // additionalLegacyPolyfills: ['regenerator-runtime/runtime'] // 面向IE11时需要此插件
       }),
 

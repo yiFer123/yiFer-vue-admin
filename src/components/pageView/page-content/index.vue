@@ -20,8 +20,15 @@
         >
           {{ isShow ? '隐藏' : '显示' }}
         </el-button>
-        <el-button type="danger" plain icon="Close" style="margin-left: 20px">批量删除</el-button>
-        <el-button type="primary" plain icon="Plus" style="margin-left: 20px" @click="handleNewUserClick">
+        <el-button v-if="isDelete" type="danger" plain icon="Close" style="margin-left: 20px">批量删除</el-button>
+        <el-button
+          v-auth="`${contentConfig.pageName}:create`"
+          type="primary"
+          plain
+          icon="Plus"
+          style="margin-left: 20px"
+          @click="handleNewUserClick"
+        >
           {{ contentConfig.header?.btnTitle ?? '新建数据' }}
         </el-button>
       </div>
@@ -51,12 +58,19 @@
               <template #default="scope">
                 <el-popconfirm title="确定删除该数据?" @confirm="handleDeleteClick(scope.row.id)">
                   <template #reference>
-                    <el-button plain type="danger" icon="Delete" circle />
+                    <el-button v-if="isDelete" plain type="danger" icon="Delete" circle />
                   </template>
                 </el-popconfirm>
 
                 <el-divider direction="vertical" />
-                <el-button plain type="primary" icon="Edit" circle @click="handleEditClick(scope.row)" />
+                <el-button
+                  v-if="isUpdate"
+                  plain
+                  type="primary"
+                  icon="Edit"
+                  circle
+                  @click="handleEditClick(scope.row)"
+                />
               </template>
             </el-table-column>
           </template>
@@ -74,7 +88,7 @@
         </template>
       </el-table>
     </div>
-    <div class="pagination">
+    <div class="pagination" v-if="pageTotalCount">
       <el-pagination
         v-model:current-page="currentPage"
         v-model:page-size="pageSize"
@@ -93,6 +107,7 @@ import useSystemStore from '@/stores/modules/system'
 import { storeToRefs } from 'pinia'
 import { onMounted, ref } from 'vue'
 import { utcFormat } from '@/utils/format'
+import usePermissions from '@/hooks/usePermissions'
 
 interface IProps {
   contentConfig: {
@@ -110,6 +125,12 @@ interface IProps {
 const emit = defineEmits(['newClick', 'editClick', 'hiddenSearch'])
 const props = defineProps<IProps>()
 
+// 获取增删改查权限
+const isCreate = usePermissions(`${props.contentConfig.pageName}:create`)
+const isDelete = usePermissions(`${props.contentConfig.pageName}:delete`)
+const isUpdate = usePermissions(`${props.contentConfig.pageName}:update`)
+const isQuery = usePermissions(`${props.contentConfig.pageName}:query`)
+
 const systemStore = useSystemStore()
 // 获取数据(因为上面发起请求是异步的，所以第一次执行这段代码是没有数据的，并且是非响应式的)
 // storeToRefs 就是将该数据变成响应式，也可以用计算属性
@@ -118,6 +139,14 @@ const { pageList, pageTotalCount } = storeToRefs(systemStore)
 // 分页相关逻辑
 const currentPage = ref(1)
 const pageSize = ref(10)
+
+systemStore.$onAction(({ name, after }) => {
+  after(() => {
+    if (name === 'deletePageByIdAction' || name === 'editPageDataAction' || name === 'newPageDataAction') {
+      currentPage.value = 1
+    }
+  })
+})
 
 onMounted(() => {
   fetchPageListData()
@@ -134,6 +163,8 @@ function handleCurrentChange() {
 
 // 发起action请求数据,先封装函数再调用
 function fetchPageListData(formData: any = {}) {
+  if (!isQuery) return
+
   const size = pageSize.value
   const offset = (currentPage.value - 1) * size
   const queryInfo = { size, offset, ...formData }
