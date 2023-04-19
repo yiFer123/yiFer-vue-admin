@@ -44,7 +44,7 @@ import type { ElTree } from 'element-plus'
 
 // content操作
 const { contentRef, handleQueryClick, handleResetClick } = usePageContent()
-const { modalRef, handleNewClick, handleEditClick } = usePageModal(editCallback)
+const { modalRef, handleNewClick, handleEditClick } = usePageModal(newCallback, editCallback)
 
 // 获取完整菜单
 const treeRef = ref<InstanceType<typeof ElTree>>()
@@ -56,11 +56,15 @@ function handleElTreeCheck(d1: any, d2: any) {
   const menuList = [...d2.checkedKeys, ...d2.halfCheckedKeys]
   otherInfos.value = { menuList }
 }
-
+function newCallback() {
+  nextTick(() => {
+    treeRef.value?.setCheckedKeys([])
+  })
+}
 function editCallback(itemData: any) {
   nextTick(() => {
     const menusIds = mapMenuListToIds(itemData.menuList)
-    console.log(menusIds)
+
     treeRef.value?.setCheckedKeys(menusIds)
   })
 }

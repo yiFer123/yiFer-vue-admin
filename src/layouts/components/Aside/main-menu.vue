@@ -68,6 +68,7 @@ const route = useRoute()
 
 const defaultActive = computed(() => {
   const pathMenu = mapPathToMenu(route.path, userMenus)
+
   return pathMenu.id + ''
 })
 </script>

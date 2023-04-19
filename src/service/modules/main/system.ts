@@ -6,7 +6,7 @@ import departmentList from '@/assets/mock/departmentList.json'
 import userMenus from '@/assets/mock/userMenus.json'
 
 export function getEntireRoles() {
-  return roleList
+  // return roleList
 
   return http.post({
     url: '/role/list'
@@ -14,7 +14,7 @@ export function getEntireRoles() {
 }
 
 export function getEntireDepartments() {
-  return departmentList
+  // return departmentList
 
   return http.post({
     url: '/department/list'
