@@ -26,6 +26,7 @@ const copy = async () => {
     console.error(e)
   }
 }
+
 </script>
 
 <style lang="scss" scoped></style>
