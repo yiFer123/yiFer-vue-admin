@@ -20,7 +20,7 @@ const contentConfig = {
     { type: 'timer', label: '更新时间', prop: 'updateAt', width: '500' },
 
     // 最后的操作栏
-    { type: 'handler', label: '操作', width: '120' }
+    { type: 'handler', label: '操作' }
   ]
 }
 

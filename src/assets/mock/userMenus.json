@@ -300,8 +300,24 @@
         },
         {
           "id": 54,
-          "url": "/assembly/fullPage",
-          "name": "全屏滚动",
+          "url": "/assembly/qrCode",
+          "name": "验证码",
+          "type": 2,
+          "children": [],
+          "parentId": 5
+        },
+        {
+          "id": 55,
+          "url": "/assembly/countup",
+          "name": "数字滚动",
+          "type": 2,
+          "children": [],
+          "parentId": 5
+        },
+        {
+          "id": 56,
+          "url": "/assembly/parallaxRolling",
+          "name": "视差滚动",
           "type": 2,
           "children": [],
           "parentId": 5
