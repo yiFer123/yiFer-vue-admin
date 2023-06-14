@@ -127,7 +127,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       host: '0.0.0.0',
       port: realEnv.VITE_PORT,
       open: realEnv.VITE_OPEN,
-      cors: true,
+      cors: true
       // 跨域代理配置
 
       // proxy: {

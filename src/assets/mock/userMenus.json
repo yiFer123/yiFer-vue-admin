@@ -323,6 +323,23 @@
           "parentId": 5
         }
       ]
+    },
+    {
+      "id": 6,
+      "name": "自定义指令",
+      "type": 1,
+      "url": "/directives",
+      "icon": "el-icon-finished",
+      "children": [
+        {
+          "id": 61,
+          "url": "/directives/smoothAscent",
+          "name": "平滑上升",
+          "type": 2,
+          "children": [],
+          "parentId": 6
+        }
+      ]
     }
   ]
 }

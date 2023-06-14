@@ -17,10 +17,10 @@ const contentConfig = {
 
     // 使用作用域插槽的类型
     { type: 'timer', label: '创建时间', prop: 'createAt', width: '200' },
-    { type: 'timer', label: '更新时间', prop: 'updateAt', width: '500' },
+    { type: 'timer', label: '更新时间', prop: 'updateAt', width: '200' },
 
     // 最后的操作栏
-    { type: 'handler', label: '操作' }
+    { type: 'handler', label: '操作', width: '180' }
   ]
 }
 

@@ -1,9 +1,11 @@
 import type { App } from 'vue'
 
 import auth from './modules/auth'
+import slideIn from './modules/slideIn'
 
 const directivesList: any = {
-  auth
+  auth,
+  slideIn
 }
 
 const directives = {
