@@ -1,5 +1,5 @@
 <template>
-  <div class="user">
+  <div class="user flx-column fill-parent">
     <transition name="plus-icon">
       <page-search
         v-show="isShow"
@@ -82,13 +82,6 @@ const slotClick = () => {
 </script>
 
 <style lang="scss" scoped>
-.user {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .plus-icon-enter-active {
   transition: all 0.1s;
 }

@@ -24,6 +24,11 @@ export const commonRouter: RouteRecordRaw[] = [
     meta: {
       title: '登录页面'
     }
+  },
+  {
+    path: '/dataScreen',
+    name: 'dataScreen',
+    component: () => import('@/views/main/dataScreen/index.vue')
   }
 ]
 

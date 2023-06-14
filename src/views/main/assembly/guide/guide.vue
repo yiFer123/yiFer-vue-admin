@@ -1,6 +1,6 @@
 <template>
   <div class="guide">
-    <my-tips :title="'用户引导页'" :description="'使用vue-clipboard3插件实现的页面复制功能'" />
+    <my-tips :title="'用户引导页'" :description="'使用driver.js插件实现的页面引导功能'" />
 
     <div class="guide_content">
       <div id="box1" class="box1">盒子1</div>

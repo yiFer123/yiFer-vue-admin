@@ -126,7 +126,7 @@ const emit = defineEmits(['newClick', 'editClick', 'hiddenSearch'])
 const props = defineProps<IProps>()
 
 // 获取增删改查权限
-const isCreate = usePermissions(`${props.contentConfig.pageName}:create`)
+// const isCreate = usePermissions(`${props.contentConfig.pageName}:create`)
 const isDelete = usePermissions(`${props.contentConfig.pageName}:delete`)
 const isUpdate = usePermissions(`${props.contentConfig.pageName}:update`)
 const isQuery = usePermissions(`${props.contentConfig.pageName}:query`)

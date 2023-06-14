@@ -1,5 +1,5 @@
 <template>
-  <div class="role">
+  <div class="role flx-column fill-parent">
     <page-search :search-config="searchConfig" @query-click="handleQueryClick" @reset-click="handleResetClick" />
     <page-content
       ref="contentRef"

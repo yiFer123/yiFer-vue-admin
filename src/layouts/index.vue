@@ -26,7 +26,7 @@ import { ref, onBeforeUnmount } from 'vue'
 import MainHeader from './components/Header'
 import MainFooter from './components/Footer'
 import MainMenu from './components/Aside'
-import _ from 'lodash'
+import { debounce } from 'lodash-es'
 
 const isFold = ref(false)
 const handleFlodChange = (flag: boolean) => {
@@ -36,7 +36,7 @@ const handleFlodChange = (flag: boolean) => {
 // 监听窗口大小变化，折叠侧边栏
 const screenWidth = ref(0)
 const headerRef = ref()
-const listeningWindow = _.debounce(() => {
+const listeningWindow = debounce(() => {
   screenWidth.value = document.body.clientWidth
   if ((!isFold.value && screenWidth.value < 1200) || (isFold.value && screenWidth.value > 1200))
     headerRef.value.handleMenuIconClick()
